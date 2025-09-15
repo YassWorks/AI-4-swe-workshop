@@ -1,6 +1,10 @@
 from datetime import datetime
+from dotenv import load_dotenv
 import subprocess
 import os
+
+
+load_dotenv()
 
 
 def exec_file(file_path: str, time: str) -> tuple[int, str]:
@@ -31,8 +35,12 @@ def get_ai_insight(prompt: str) -> None:
     Args:
         prompt (str): full code + error message
     """
+    
+    model_name = "qwen-3-32b"
+    api_key = os.getenv("CEREBRAS_API_KEY")
+    
     ##### YOUR CODE HERE #####
-    return "it worked"
+    return ""
     ##########################
 
 
@@ -50,7 +58,7 @@ def workflow(file_path: str, time: str) -> None:
             code = f.read()
 
         payload = f"Code:\n\n{code}\n\n{'#' * 50}\n\nError:\n\n{output}\n\n{'#' * 50}"
-        with open("instructions.md", "r") as f:
+        with open("prompts/instructions.md", "r") as f:
             instructions = f.read()
 
         insight = get_ai_insight(payload + instructions)
