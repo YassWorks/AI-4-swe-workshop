@@ -74,7 +74,7 @@ def workflow(file_path: str, time: str) -> None:
 
 
 if __name__ == "__main__":
-
+    
     time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     os.makedirs("executables", exist_ok=True)
     os.makedirs("output", exist_ok=True)
