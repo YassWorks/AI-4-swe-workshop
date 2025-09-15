@@ -18,3 +18,9 @@ Getting Immediate AI Insights on Errors. In this example, we focus on **C code**
 We use **Cerebras** as the inference provider.  
 It offers a generous free tier, making it well-suited for giving students access to powerful models such as **Qwen 3**.  
 A different one can be used as long as it's compatible with LangChain (most are).
+
+## Requirements
+
+- **gcc** (for compiling C code)  
+- **Cerebras API key** (for model inference)  
+- **Python dependencies** listed in `requirements.txt`  
