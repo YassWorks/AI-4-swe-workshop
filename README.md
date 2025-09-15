@@ -1,4 +1,4 @@
-# Workshop Error support Mini Project
+# Workshop - **Error Insight Generator** Mini Project
 
 This project is part of the "AI for software engineering" workshop scheduled for the 2025 IEEE CS Summer School event. And in this repo we break down one of the clever ways to use AI to learn and grow effectively as a software engineer without spoiling the learning experience.
 
