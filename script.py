@@ -1,5 +1,6 @@
 from datetime import datetime
 from dotenv import load_dotenv
+from helpers.strip_thinking import strip_thinking_block
 import subprocess
 import os
 
@@ -40,7 +41,7 @@ def get_ai_insight(prompt: str) -> None:
     api_key = os.getenv("CEREBRAS_API_KEY")
     
     ##### YOUR CODE HERE #####
-    return ""
+    return strip_thinking_block("YOUR FINAL OUTPUT BEFORE RETURNING")
     ##########################
 
 
@@ -57,7 +58,7 @@ def workflow(file_path: str, time: str) -> None:
         with open(file_path, "r") as f:
             code = f.read()
 
-        payload = f"Code:\n\n{code}\n\n{'#' * 50}\n\nError:\n\n{output}\n\n{'#' * 50}"
+        payload = f"Code:\n\n```{code}```\n\n---\n\nError:\n\n```{output}```\n\n---\n"
         with open("prompts/instructions.md", "r") as f:
             instructions = f.read()
 
@@ -66,11 +67,9 @@ def workflow(file_path: str, time: str) -> None:
         with open(insight_file, "w") as f:
             f.write(payload + "\n\n" + insight)
 
-        print("\n[Execution failed]. Error message:\n")
-        print(output)
+        print(f"\n[Execution failed]. Error message:\n\n{output}\n\n[AI insight]:\n\n{insight}\n")
     else:
-        print("\n[Execution successful]. Output:\n")
-        print(output)
+        print(f"\n[Execution successful]. Output:\n\n{output}\n")
 
 
 if __name__ == "__main__":
