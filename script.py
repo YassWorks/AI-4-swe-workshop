@@ -29,7 +29,7 @@ def exec_file(file_path: str, time: str) -> tuple[int, str]:
     return result.returncode, result.stdout
 
 
-def get_ai_insight(prompt: str) -> None:
+def get_ai_insight(prompt: str) -> str:
     """
     Prints AI insight for help on a given error to a markdown file
 
