@@ -7,5 +7,5 @@ int main() {
     p[0] = 10;
     p[1] = 20;
 
-    free(p);
+    free(p);azeaze
 }
