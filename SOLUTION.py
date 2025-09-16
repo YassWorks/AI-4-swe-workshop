@@ -1,11 +1,12 @@
 from langchain_cerebras import ChatCerebras
 from langchain_core.prompts import ChatPromptTemplate
+from helpers.strip_thinking import strip_thinking_block
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-def get_ai_insight(prompt: str) -> None:
+def get_ai_insight_solution(prompt: str) -> None:
     """
     Prints AI insight for help on a given error to a markdown file
 
@@ -28,13 +29,13 @@ def get_ai_insight(prompt: str) -> None:
     template = ChatPromptTemplate.from_messages(
         [
             ("system", system_prompt),
-            ("human", "{messages}"),
+            ("human", "{prompt}"),
         ]
     )
     
     llm_chain = template | llm
-    response = llm_chain.invoke({"human": prompt})
+    response = llm_chain.invoke({"prompt": prompt}, )
     if hasattr(response, "content"):
-        return response.content
+        return strip_thinking_block(response.content)
     else:
         return "[ERROR] Please retry, something went wrong."
