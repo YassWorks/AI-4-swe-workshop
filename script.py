@@ -58,7 +58,7 @@ def workflow(file_path: str, time: str) -> None:
         with open(file_path, "r") as f:
             code = f.read()
 
-        payload = f"Code:\n\n```{code}```\n\n---\n\nError:\n\n```{output}```\n\n---\n"
+        payload = f"Code:\n\n```\n{code}\n```\n\n---\n\nError:\n\n```\n{output}\n```\n\n---\n"
         with open("prompts/instructions.md", "r") as f:
             instructions = f.read()
 
