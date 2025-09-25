@@ -36,7 +36,7 @@ def get_ai_insight_solution(prompt: str) -> None:
     )
     
     llm_chain = template | llm
-    response = llm_chain.invoke({"prompt": prompt}, )
+    response = llm_chain.invoke({"prompt": prompt})
     if hasattr(response, "content"):
         return strip_thinking_block(response.content)
     else:

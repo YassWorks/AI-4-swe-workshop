@@ -78,5 +78,10 @@ if __name__ == "__main__":
     time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     os.makedirs("executables", exist_ok=True)
     os.makedirs("output", exist_ok=True)
+    
+    if len(argv) != 2:
+        print("Please provide a <file_path>")
+        exit(1)
+    
     file_path = argv[1]
     workflow(file_path, time)
