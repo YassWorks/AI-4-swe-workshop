@@ -4,7 +4,9 @@ from helpers.strip_thinking import strip_thinking_block
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
+
 
 def get_ai_insight_solution(prompt: str) -> None:
     """
