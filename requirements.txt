@@ -1,3 +1,4 @@
 langchain
+langgraph
 langchain-cerebras
 python-dotenv
