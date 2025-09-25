@@ -1,4 +1,5 @@
 from datetime import datetime
+from sys import argv
 from dotenv import load_dotenv
 from helpers.strip_thinking import strip_thinking_block
 import subprocess
@@ -77,5 +78,5 @@ if __name__ == "__main__":
     time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     os.makedirs("executables", exist_ok=True)
     os.makedirs("output", exist_ok=True)
-    file_path = "app.c"
+    file_path = argv[1]
     workflow(file_path, time)
