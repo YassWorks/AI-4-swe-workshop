@@ -1,4 +1,4 @@
-# Workshop - **Error Insight Generator** Mini Project
+# Workshop - **Error Insight Generator** Mini Project #1
 
 This project is part of the "AI for software engineering" workshop scheduled for the 2025 IEEE CS Summer School event. And in this repo we break down one of the clever ways to use AI to learn and grow effectively as a software engineer without spoiling the learning experience.
 
@@ -8,8 +8,8 @@ Getting Immediate AI Insights on Errors. In this example, we focus on **C code**
 
 ## How to Use
 
-1. Write your code in the `app.c` file.  
-2. Run the `script.py` file.  
+1. Write your code in any C file 
+2. Use the `./get_help.bat` followed with the directory to the C file
 3. If everything runs successfully, the output will print to the terminal as usual.  
 4. If an error occurs, a file containing the full code, error message, and AI-generated insight will be created in the `/output` directory.  
 
@@ -24,3 +24,11 @@ A different one can be used as long as it's compatible with LangChain (most are)
 - **gcc** (for compiling C code)  
 - **Cerebras API key** (for model inference)  
 - **Python dependencies** listed in `requirements.txt`  
+
+## Setup
+
+```
+python -m venv .venv
+
+pip install -r requirements.txt
+```
