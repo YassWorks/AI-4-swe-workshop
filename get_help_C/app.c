@@ -8,4 +8,5 @@ int main() {
     p[1] = 20;
 
     free(p);
+    free(p);
 }
